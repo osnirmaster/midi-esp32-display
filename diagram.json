@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "ESP32‑C6 MIDI Display",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp",
+      "type": "board-esp32-c6-devkitc-1",
+      "left": -120,
+      "top": -80,
+      "attrs": {}
+    },
+    {
+      "id": "btnNext",
+      "type": "wokwi-pushbutton",
+      "left": 200,
+      "top": -100,
+      "attrs": {
+        "color": "green",
+        "label": "Next"
+      }
+    },
+    {
+      "id": "btnPrev",
+      "type": "wokwi-pushbutton",
+      "left": 200,
+      "top": -40,
+      "attrs": {
+        "color": "yellow",
+        "label": "Prev"
+      }
+    },
+    {
+      "id": "pot",
+      "type": "wokwi-potentiometer",
+      "left": 200,
+      "top": 40,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["btnNext:1", "esp:GPIO18", "green", []],
+    ["btnNext:2", "esp:GND.1", "black", []],
+    ["btnPrev:1", "esp:GPIO19", "yellow", []],
+    ["btnPrev:2", "esp:GND.2", "black", []],
+    ["pot:SIG", "esp:GPIO3", "blue", []],
+    ["pot:VCC", "esp:3.3V", "red", []],
+    ["pot:GND", "esp:GND.3", "black", []]
+  ]
+}
